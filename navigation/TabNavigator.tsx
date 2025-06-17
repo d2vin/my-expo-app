@@ -6,7 +6,13 @@ import ProfileScreen from '../screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
-export default function TabNavigator({ items, addItem, currentUserId }) {
+type TabNavigatorProps = {
+  items: any[]; // Replace 'any' with the actual item type if known
+  addItem: (item: any) => void; // Replace 'any' with the actual item type if known
+  currentUserId: string;
+};
+
+export default function TabNavigator({ items, addItem, currentUserId }: TabNavigatorProps) {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home">
